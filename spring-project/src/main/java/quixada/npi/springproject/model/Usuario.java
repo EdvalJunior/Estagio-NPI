@@ -32,7 +32,7 @@ public class Usuario implements UserDetails {
 	private String password;
 
 	private boolean habilitado;
-	private boolean status; 
+	private boolean status;
 
 	public Usuario() {}
 
@@ -77,7 +77,7 @@ public class Usuario implements UserDetails {
 	public void setHabilitado(boolean habilitado) {
 		this.habilitado = habilitado;
 	}
-
+	
 	public boolean isStatus() {
 		return status;
 	}
@@ -85,7 +85,7 @@ public class Usuario implements UserDetails {
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
-	
+
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		return Collections.emptyList();
@@ -142,7 +142,5 @@ public class Usuario implements UserDetails {
 			return false;
 		return true;
 	}
-
-
 	
 }

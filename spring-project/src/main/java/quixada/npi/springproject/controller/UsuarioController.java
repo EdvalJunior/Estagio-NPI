@@ -30,11 +30,12 @@ public class UsuarioController {
     @PostMapping("")
     public ResponseEntity<List<Usuario>> create(@RequestBody Usuario usuario) {
         // Cadastrar usuário e retornar usuário cadastrado...
+    	
         return ResponseEntity.ok().build();
     }
 
     //@DeleteMapping("{id}")
-    ///TODO: excluir usuário
+    //TODO: excluir usuário
 
     // @PutMapping("{id}")
     /*public ResponseEntity<Usuario> update(@RequestBody Usuario usuario) {

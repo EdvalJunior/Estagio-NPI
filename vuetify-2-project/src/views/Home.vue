@@ -5,6 +5,7 @@
 
       </div>
       <div slot="widget-content">
+        <v-btn color="primary" dark dense app> Novo Usuário</v-btn>
         <v-row>
           <v-col cols="12">
             <v-data-table
@@ -12,7 +13,12 @@
                     :items="usuarios"
                     :items-per-page="5"
                     class="elevation-1"
-            ></v-data-table>
+            >
+              <template v-slot:item.action="{ item }">
+                    <v-icon medium="" color="success" class="mr-2" @click="editItem(item)">edit</v-icon>
+                    <v-icon medium="" color="success" @click="deleteItem(item)">delete</v-icon>
+              </template>
+            </v-data-table>
           </v-col>
         </v-row>
       </div>
@@ -22,15 +28,12 @@
 
 <script>
 // @ is an alias to /src
-import VCardWidget from "@/components/VWidget";
-import {RepositoryFactory} from "@/repositories/RepositoryFactory";
-const usuarioRepo = RepositoryFactory.get("usuario");
+  import VCardWidget from "@/components/VWidget";
+  import {RepositoryFactory} from "@/repositories/RepositoryFactory";
+  const usuarioRepo = RepositoryFactory.get("usuario");
 
 export default {
   name: 'home',
-  components: {
-    VCardWidget
-  },
 
   data: () => ({
     headers: [
@@ -40,7 +43,8 @@ export default {
         value: 'nome',
       },
       { text: 'Email', value: 'email' },
-      { text: 'Status', value: 'status' }
+      {text: 'Status', value: 'status'},
+      {text: '', value: 'action'}
     ],
     usuarios :[]
   }),
@@ -60,3 +64,8 @@ export default {
   }
 }
 </script>
+
+<style>
+
+
+</style>

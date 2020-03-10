@@ -7,14 +7,14 @@
                   transition="scale-transition" width="40"/>
               </div>
                 <v-toolbar-items class="ml-3">
-                    <v-btn to="/" text>Início</v-btn>
-                    <v-btn to="/" text>Cursos</v-btn>
+                    <v-btn outlined=""  to="/" text>Início</v-btn>
+                    <v-btn outlined=""  to="/" text>Cursos</v-btn>
                 </v-toolbar-items>
 
               <v-spacer></v-spacer>
 
-                <!--<span>Olá, {{nome}}</span>-->
-                <span>Olá, Usuário</span>
+                <span>Olá, {{nome}}</span>
+                <!--<span>Olá, Usuário</span> -->
                 <v-btn @click="logout" text>
                   <v-icon>power_settings_new</v-icon>
               </v-btn>
@@ -59,7 +59,7 @@ export default {
 
     methods: {
         logout() {
-            this.$router.push('/logout')
+            this.$router.push('/login')
         }
 
     }
